@@ -1,0 +1,10 @@
+services:
+  attitude-server:
+    build: .
+    image: attitude-service:latest
+    container_name: attitude-server
+    ports:
+      - "8080:8080"
+    environment:
+      ATTITUDE_HTTP_ADDR: ":8080"
+    restart: unless-stopped
